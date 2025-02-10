@@ -35,6 +35,7 @@ export const IpSearchField: FC<IpSearchFieldProps> = ({ index }) => {
         disabled={isLoading}
         error={Boolean(errorMessage)}
         helperText={errorMessage}
+        autoFocus
       />
       {isLoading && <CircularProgress />}
       {shouldRenderIpDetails() && (
