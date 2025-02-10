@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { SearchIpResponse } from "../api/ip-search/types";
 import { isIPv4 } from "is-ip";
 import { searchIp } from "../api/ip-search/ip-search";
+import { useTranslation } from "react-i18next";
 
 export const useIpSearchField = () => {
   const [ip, setIp] = useState("");
@@ -9,6 +10,7 @@ export const useIpSearchField = () => {
   const prevIpRef = useRef<string>("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const { t } = useTranslation();
 
   const handleResetValues = () => {
     setErrorMessage("");
@@ -18,7 +20,7 @@ export const useIpSearchField = () => {
 
   const isIpValid = (): boolean => {
     if (!isIPv4(ip)) {
-      setErrorMessage("IP address is invalid");
+      setErrorMessage(t("ipLookup.validations.ipInvalid"));
       return false;
     }
     handleResetValues();

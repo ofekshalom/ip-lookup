@@ -3,6 +3,7 @@ import { ChangeEvent, FC } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 import { IpDetails } from "./IpDetails/IpDetails";
 import { useIpSearchField } from "../../../hooks/useIpSearchField";
+import { IP_PLACEHOLDER } from "./constants";
 
 interface IpSearchFieldProps {
   index: number;
@@ -27,7 +28,7 @@ export const IpSearchField: FC<IpSearchFieldProps> = ({ index }) => {
         <Typography>{index}</Typography>
       </Box>
       <TextField
-        placeholder="127.0.0.1"
+        placeholder={IP_PLACEHOLDER}
         value={ip}
         onChange={handleChange}
         onBlur={handleBlur}

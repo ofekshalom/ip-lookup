@@ -1,3 +1,4 @@
+import i18next from "i18next";
 import { SearchIpResponse } from "./types";
 
 const BASE_URL = "http://ip-api.com";
@@ -8,13 +9,13 @@ export const searchIp = async (ip: string): Promise<SearchIpResponse> => {
   const response = await fetch(url);
 
   if (!response.ok) {
-    throw new Error("Couldn't search your selected IP");
+    throw new Error(i18next.t("ipLookup.validations.apiCouldNotSearch"));
   }
 
   const responseJson: SearchIpResponse = await response.json();
 
   if (responseJson.status === "fail") {
-    throw new Error("Your IP is out of rage");
+    throw new Error(i18next.t("ipLookup.validations.outOfRange"));
   }
 
   return responseJson;
