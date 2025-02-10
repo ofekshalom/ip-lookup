@@ -1,19 +1,20 @@
 import { FC, useEffect, useState } from "react";
-import { toZonedTime } from "date-fns-tz";
-import { format } from "date-fns";
+
 import { Typography } from "@mui/material";
+import { getCurrentTime } from "../../../../../utils/time";
 
 interface CountryClockProps {
   timezone: string;
 }
 
 export const CountryClock: FC<CountryClockProps> = ({ timezone }) => {
-  const [currentTime, setCurrentTime] = useState<string>("");
+  const [currentTime, setCurrentTime] = useState<string>(
+    getCurrentTime(timezone)
+  );
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const zonedTime = toZonedTime(new Date(), timezone);
-      const time = format(zonedTime, "HH:mm:ss");
+      const time = getCurrentTime(timezone);
       setCurrentTime(time);
     }, 1000);
 
