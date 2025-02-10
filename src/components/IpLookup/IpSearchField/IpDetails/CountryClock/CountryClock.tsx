@@ -15,10 +15,10 @@ export const CountryClock: FC<CountryClockProps> = ({ timezone }) => {
       const zonedTime = toZonedTime(new Date(), timezone);
       const time = format(zonedTime, "HH:mm:ss");
       setCurrentTime(time);
-    }, 1000); // Update time every second
+    }, 1000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
-  }, [timezone]); // Depend on timezone change
+    return () => clearInterval(intervalId);
+  }, [timezone]);
 
   return <Typography>{currentTime}</Typography>;
 };

@@ -1,6 +1,6 @@
 import { Button, Card, Typography } from "@mui/material";
 import { v4 as uuidv4 } from "uuid";
-import { useId, useState } from "react";
+import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import { IpSearchField } from "./IpSearchField/IpSearchField";
 
@@ -24,8 +24,8 @@ export const IpLookup = () => {
       <Button startIcon={<AddIcon />} onClick={handleAppIp}>
         Add IP
       </Button>
-      {ipSearchList.map((ipSearchItem, index) => (
-        <IpSearchField item={ipSearchItem} index={index} />
+      {ipSearchList.map((_, index) => (
+        <IpSearchField index={index} />
       ))}
     </Card>
   );

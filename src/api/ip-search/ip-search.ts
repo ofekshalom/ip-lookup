@@ -7,7 +7,15 @@ export const searchIp = async (ip: string): Promise<SearchIpResponse> => {
 
   const response = await fetch(url);
 
+  if (!response.ok) {
+    throw new Error("Couldn't search your selected IP");
+  }
+
   const responseJson: SearchIpResponse = await response.json();
+
+  if (responseJson.status === "fail") {
+    throw new Error("Your IP is out of rage");
+  }
 
   return responseJson;
 };
