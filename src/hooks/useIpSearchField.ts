@@ -33,7 +33,7 @@ export const useIpSearchField = () => {
       setRequestedIp(ipResponse);
     } catch (e) {
       setErrorMessage(
-        e instanceof Error ? e.message : "An unknown error occurred"
+        e instanceof Error ? e.message : t("ipLookup.validations.unknownError")
       );
     }
     prevIpRef.current = ip;

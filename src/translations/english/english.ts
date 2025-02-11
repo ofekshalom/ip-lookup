@@ -7,6 +7,7 @@ export const english = {
       ipInvalid: "IP address is invalid",
       apiCouldNotSearch: "Couldn't search your selected IP",
       outOfRange: "Your IP is out of range",
+      unknownError: "An unknown error occurred",
     },
   },
 };

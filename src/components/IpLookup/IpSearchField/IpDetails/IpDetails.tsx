@@ -3,6 +3,7 @@ import { CountryClock } from "./CountryClock/CountryClock";
 import { FC } from "react";
 import { StyledBoxImage, StyledBoxWrapper } from "./IpDetails.styles";
 import { COUNTRY_FLAG_IMAGE_TEST_ID } from "../../../../utils/data-test-ids";
+import { generateFlagImageSrc } from "../../../../api/flag-seach/flag-search";
 
 interface IpDetailsProps {
   timezone: string;
@@ -22,7 +23,7 @@ export const IpDetails: FC<IpDetailsProps> = ({
         <StyledBoxImage
           data-testid={COUNTRY_FLAG_IMAGE_TEST_ID}
           component="img"
-          src={`https://flagsapi.com/${countryCode}/flat/64.png`}
+          src={generateFlagImageSrc(countryCode)}
         />
       </Tooltip>
 
