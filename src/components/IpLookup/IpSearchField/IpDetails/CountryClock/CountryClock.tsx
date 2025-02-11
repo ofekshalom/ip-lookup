@@ -1,7 +1,12 @@
 import { FC, useEffect, useState } from "react";
-
-import { Typography } from "@mui/material";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { Box, Tooltip, Typography } from "@mui/material";
 import { getCurrentTime } from "../../../../../utils/time";
+import {
+  StyledBoxWrapper,
+  StyledClockIcon,
+  StyledTypography,
+} from "./CountryClock.styles";
 
 interface CountryClockProps {
   timezone: string;
@@ -21,5 +26,12 @@ export const CountryClock: FC<CountryClockProps> = ({ timezone }) => {
     return () => clearInterval(intervalId);
   }, [timezone]);
 
-  return <Typography>{currentTime}</Typography>;
+  return (
+    <Tooltip title={timezone} placement="top" arrow>
+      <StyledBoxWrapper>
+        <StyledClockIcon />
+        <StyledTypography>{currentTime}</StyledTypography>
+      </StyledBoxWrapper>
+    </Tooltip>
+  );
 };

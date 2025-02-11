@@ -3,4 +3,5 @@ export interface SearchIpResponse {
   countryCode: string;
   timezone: string;
   status: string;
+  city: string;
 }

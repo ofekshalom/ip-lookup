@@ -4,6 +4,11 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { IpDetails } from "./IpDetails/IpDetails";
 import { useIpSearchField } from "../../../hooks/useIpSearchField";
 import { IP_PLACEHOLDER } from "./constants";
+import {
+  StyledBoxItemIndexWrapper,
+  StyledBoxWrapper,
+  StyledTypographyIndex,
+} from "./IpSearchField.styles";
 
 interface IpSearchFieldProps {
   index: number;
@@ -23,10 +28,10 @@ export const IpSearchField: FC<IpSearchFieldProps> = ({ index }) => {
   };
 
   return (
-    <Box>
-      <Box>
-        <Typography>{index}</Typography>
-      </Box>
+    <StyledBoxWrapper>
+      <StyledBoxItemIndexWrapper>
+        <StyledTypographyIndex>{index}</StyledTypographyIndex>
+      </StyledBoxItemIndexWrapper>
       <TextField
         placeholder={IP_PLACEHOLDER}
         value={ip}
@@ -35,15 +40,18 @@ export const IpSearchField: FC<IpSearchFieldProps> = ({ index }) => {
         disabled={isLoading}
         error={Boolean(errorMessage)}
         helperText={errorMessage}
+        variant="outlined"
         autoFocus
       />
-      {isLoading && <CircularProgress />}
+      {isLoading && <CircularProgress size="30px" />}
       {shouldRenderIpDetails() && (
         <IpDetails
           countryCode={requestedIp!.countryCode}
           timezone={requestedIp!.timezone}
+          countryName={requestedIp!.country}
+          city={requestedIp!.city}
         />
       )}
-    </Box>
+    </StyledBoxWrapper>
   );
 };

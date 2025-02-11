@@ -4,6 +4,13 @@ import { useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import { IpSearchField } from "./IpSearchField/IpSearchField";
 import { useTranslation } from "react-i18next";
+import {
+  StyledAddButton,
+  StyledBoxIpSearchWrapper,
+  StyledCard,
+  StyledHeader,
+  StyledSubHeader,
+} from "./IpLookup.styles";
 
 export interface IpSearchItem {
   id: string;
@@ -18,15 +25,22 @@ export const IpLookup = () => {
     setIpSearchList((prevState) => [...prevState, { id }]);
   };
   return (
-    <Card>
-      <Typography>{t("ipLookup.header")}</Typography>
-      <Typography>{t("ipLookup.subheader")}</Typography>
-      <Button startIcon={<AddIcon />} onClick={handleAppIp}>
+    <StyledCard>
+      <StyledHeader>{t("ipLookup.header")}</StyledHeader>
+      <StyledSubHeader>{t("ipLookup.subheader")}</StyledSubHeader>
+      <StyledAddButton
+        variant="contained"
+        color="primary"
+        startIcon={<AddIcon />}
+        onClick={handleAppIp}
+      >
         {t("ipLookup.addIpButton")}
-      </Button>
-      {ipSearchList.map((_, index) => (
-        <IpSearchField index={index} />
-      ))}
-    </Card>
+      </StyledAddButton>
+      <StyledBoxIpSearchWrapper>
+        {ipSearchList.map((item, index) => (
+          <IpSearchField key={item.id} index={index + 1} />
+        ))}
+      </StyledBoxIpSearchWrapper>
+    </StyledCard>
   );
 };
