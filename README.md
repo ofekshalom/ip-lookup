@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# IP Lookup UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based UI component that allows users to search for an IP address, fetch its location data, and display relevant information such as the country flag and current time. The project includes form validation and error handling to ensure valid IP inputs.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Ensure you have the following installed before setting up the project:
 
-### `yarn start`
+- **Node.js**: Version **21** or above
+- **Yarn**: Latest stable version
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Clone the repository and install dependencies:
 
-### `yarn test`
+```sh
+# Clone the repository
+git clone https://github.com/ofekshalom/ip-lookup.git
+cd ip-lookup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Install dependencies using Yarn
+yarn install
+```
 
-### `yarn build`
+## Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The following scripts are available in the `package.json` file:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Start the development server:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  ```sh
+  yarn start
+  ```
 
-### `yarn eject`
+  Runs the project in development mode. Open `http://localhost:3000` in your browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Build the project for production:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```sh
+  yarn build
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  Creates an optimized production build in the `build` directory.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **Run tests:**
 
-## Learn More
+  ```sh
+  yarn test
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  Executes unit tests using Jest and React Testing Library.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Lint the code:**
+
+  ```sh
+  yarn lint
+  ```
+
+  Runs ESLint to check for code quality issues.
+
+## Running Tests
+
+The project includes React Testing Library. To run the tests, use:
+
+```sh
+yarn test
+```
+
+For continuous testing while coding, run:
+
+```sh
+yarn test --watch
+```
