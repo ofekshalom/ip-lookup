@@ -10,6 +10,10 @@ import {
   StyledHeader,
   StyledSubHeader,
 } from "./IpLookup.styles";
+import {
+  ADD_IP_BUTTON_TEST_ID,
+  IP_SEARCH_WRAPPER_TEST_ID,
+} from "../../utils/data-test-ids";
 
 export interface IpSearchItem {
   id: string;
@@ -28,7 +32,7 @@ export const IpLookup = () => {
       <StyledHeader>{t("ipLookup.header")}</StyledHeader>
       <StyledSubHeader>{t("ipLookup.subheader")}</StyledSubHeader>
       <StyledAddButton
-        data-testid="add-ip-button"
+        data-testid={ADD_IP_BUTTON_TEST_ID}
         variant="contained"
         color="primary"
         startIcon={<AddIcon />}
@@ -36,7 +40,7 @@ export const IpLookup = () => {
       >
         {t("ipLookup.addIpButton")}
       </StyledAddButton>
-      <StyledBoxIpSearchWrapper data-testid="ip-search-wrapper">
+      <StyledBoxIpSearchWrapper data-testid={IP_SEARCH_WRAPPER_TEST_ID}>
         {ipSearchList.map((item, index) => (
           <IpSearchField key={item.id} index={index + 1} />
         ))}

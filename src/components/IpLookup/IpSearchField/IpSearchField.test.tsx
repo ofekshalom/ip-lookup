@@ -3,6 +3,11 @@ import { I18nextProvider } from "react-i18next";
 
 import i18n from "../../../translations/i18";
 import { IpSearchField } from "./IpSearchField";
+import {
+  COUNTRY_CLOCK_TYPOGRAPHY_TEST_ID,
+  COUNTRY_FLAG_IMAGE_TEST_ID,
+  IP_SEARCH_INPUT_TEST_ID,
+} from "../../../utils/data-test-ids";
 
 describe("IpSearchField component", () => {
   test("should render TextField component and set value", async () => {
@@ -12,7 +17,7 @@ describe("IpSearchField component", () => {
       </I18nextProvider>
     );
 
-    const textField = screen.getByTestId("ip-search-input");
+    const textField = screen.getByTestId(IP_SEARCH_INPUT_TEST_ID);
 
     fireEvent.change(textField, { target: { value: "255.255.255.255" } });
 
@@ -26,7 +31,7 @@ describe("IpSearchField component", () => {
       </I18nextProvider>
     );
 
-    const textField = screen.getByTestId("ip-search-input");
+    const textField = screen.getByTestId(IP_SEARCH_INPUT_TEST_ID);
 
     fireEvent.change(textField, { target: { value: "12.12.12.12" } });
     fireEvent.blur(textField);
@@ -35,8 +40,10 @@ describe("IpSearchField component", () => {
 
     await waitFor(
       () => {
-        const countryFlagImage = screen.getByTestId("country-image");
-        const countryLocalTime = screen.getByTestId("country-local-time");
+        const countryFlagImage = screen.getByTestId(COUNTRY_FLAG_IMAGE_TEST_ID);
+        const countryLocalTime = screen.getByTestId(
+          COUNTRY_CLOCK_TYPOGRAPHY_TEST_ID
+        );
 
         expect(countryFlagImage).toBeInTheDocument();
         expect(countryLocalTime).toBeInTheDocument();
@@ -52,7 +59,7 @@ describe("IpSearchField component", () => {
       </I18nextProvider>
     );
 
-    const textField = screen.getByTestId("ip-search-input");
+    const textField = screen.getByTestId(IP_SEARCH_INPUT_TEST_ID);
 
     fireEvent.change(textField, { target: { value: "255.255.255.255" } });
     fireEvent.blur(textField);
@@ -75,7 +82,7 @@ describe("IpSearchField component", () => {
       </I18nextProvider>
     );
 
-    const textField = screen.getByTestId("ip-search-input");
+    const textField = screen.getByTestId(IP_SEARCH_INPUT_TEST_ID);
 
     fireEvent.change(textField, { target: { value: "hello" } });
     fireEvent.blur(textField);
@@ -93,7 +100,7 @@ describe("IpSearchField component", () => {
       </I18nextProvider>
     );
 
-    const textField = screen.getByTestId("ip-search-input");
+    const textField = screen.getByTestId(IP_SEARCH_INPUT_TEST_ID);
 
     fireEvent.change(textField, { target: { value: "hello" } });
     fireEvent.blur(textField);

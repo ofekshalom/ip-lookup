@@ -2,6 +2,10 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { I18nextProvider } from "react-i18next";
 import { IpLookup } from "./IpLookup";
 import i18n from "../../translations/i18";
+import {
+  ADD_IP_BUTTON_TEST_ID,
+  IP_SEARCH_WRAPPER_TEST_ID,
+} from "../../utils/data-test-ids";
 
 describe("IpLookup component", () => {
   test("should render add ip button", () => {
@@ -21,11 +25,11 @@ describe("IpLookup component", () => {
       </I18nextProvider>
     );
 
-    const button = screen.getByTestId("add-ip-button");
+    const button = screen.getByTestId(ADD_IP_BUTTON_TEST_ID);
 
     fireEvent.click(button);
 
-    const ipSearchWrapper = screen.getByTestId("ip-search-wrapper");
+    const ipSearchWrapper = screen.getByTestId(IP_SEARCH_WRAPPER_TEST_ID);
 
     expect(ipSearchWrapper.children).toHaveLength(1);
   });
@@ -37,13 +41,13 @@ describe("IpLookup component", () => {
       </I18nextProvider>
     );
 
-    const button = screen.getByTestId("add-ip-button");
+    const button = screen.getByTestId(ADD_IP_BUTTON_TEST_ID);
 
     fireEvent.click(button);
     fireEvent.click(button);
     fireEvent.click(button);
 
-    const ipSearchWrapper = screen.getByTestId("ip-search-wrapper");
+    const ipSearchWrapper = screen.getByTestId(IP_SEARCH_WRAPPER_TEST_ID);
 
     expect(ipSearchWrapper.children).toHaveLength(3);
   });

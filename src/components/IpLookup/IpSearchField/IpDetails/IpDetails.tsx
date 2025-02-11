@@ -2,6 +2,7 @@ import { Tooltip } from "@mui/material";
 import { CountryClock } from "./CountryClock/CountryClock";
 import { FC } from "react";
 import { StyledBoxImage, StyledBoxWrapper } from "./IpDetails.styles";
+import { COUNTRY_FLAG_IMAGE_TEST_ID } from "../../../../utils/data-test-ids";
 
 interface IpDetailsProps {
   timezone: string;
@@ -19,8 +20,7 @@ export const IpDetails: FC<IpDetailsProps> = ({
     <StyledBoxWrapper>
       <Tooltip title={`${countryName} / ${city}`} arrow placement="top">
         <StyledBoxImage
-          data-testid="country-image"
-          sx={{ width: "40px" }}
+          data-testid={COUNTRY_FLAG_IMAGE_TEST_ID}
           component="img"
           src={`https://flagsapi.com/${countryCode}/flat/64.png`}
         />

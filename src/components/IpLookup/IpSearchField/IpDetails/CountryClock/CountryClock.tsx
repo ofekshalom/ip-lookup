@@ -6,6 +6,7 @@ import {
   StyledClockIcon,
   StyledTypography,
 } from "./CountryClock.styles";
+import { COUNTRY_CLOCK_TYPOGRAPHY_TEST_ID } from "../../../../../utils/data-test-ids";
 
 interface CountryClockProps {
   timezone: string;
@@ -29,7 +30,7 @@ export const CountryClock: FC<CountryClockProps> = ({ timezone }) => {
     <Tooltip title={timezone} placement="top" arrow>
       <StyledBoxWrapper>
         <StyledClockIcon />
-        <StyledTypography data-testid="country-local-time">
+        <StyledTypography data-testid={COUNTRY_CLOCK_TYPOGRAPHY_TEST_ID}>
           {currentTime}
         </StyledTypography>
       </StyledBoxWrapper>

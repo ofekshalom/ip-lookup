@@ -9,6 +9,7 @@ import {
   StyledBoxWrapper,
   StyledTypographyIndex,
 } from "./IpSearchField.styles";
+import { IP_SEARCH_INPUT_TEST_ID } from "../../../utils/data-test-ids";
 
 interface IpSearchFieldProps {
   index: number;
@@ -34,7 +35,7 @@ export const IpSearchField: FC<IpSearchFieldProps> = ({ index }) => {
       </StyledBoxItemIndexWrapper>
       <TextField
         slotProps={{
-          input: { inputProps: { "data-testid": "ip-search-input" } },
+          input: { inputProps: { "data-testid": IP_SEARCH_INPUT_TEST_ID } },
         }}
         placeholder={IP_PLACEHOLDER}
         value={ip}
