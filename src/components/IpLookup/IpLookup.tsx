@@ -28,6 +28,7 @@ export const IpLookup = () => {
       <StyledHeader>{t("ipLookup.header")}</StyledHeader>
       <StyledSubHeader>{t("ipLookup.subheader")}</StyledSubHeader>
       <StyledAddButton
+        data-testid="add-ip-button"
         variant="contained"
         color="primary"
         startIcon={<AddIcon />}
@@ -35,7 +36,7 @@ export const IpLookup = () => {
       >
         {t("ipLookup.addIpButton")}
       </StyledAddButton>
-      <StyledBoxIpSearchWrapper>
+      <StyledBoxIpSearchWrapper data-testid="ip-search-wrapper">
         {ipSearchList.map((item, index) => (
           <IpSearchField key={item.id} index={index + 1} />
         ))}
