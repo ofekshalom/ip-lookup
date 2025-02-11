@@ -15,7 +15,6 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
-    extends: ["react-app", "react-app/jest"], // Adding react-app and jest configurations
     rules: {
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-vars": "error",
