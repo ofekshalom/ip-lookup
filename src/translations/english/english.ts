@@ -6,7 +6,7 @@ export const english = {
     validations: {
       ipInvalid: "IP address is invalid",
       apiCouldNotSearch: "Couldn't search your selected IP",
-      outOfRange: "Your IP is out of rage",
+      outOfRange: "Your IP is out of range",
     },
   },
 };

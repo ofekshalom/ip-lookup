@@ -29,7 +29,9 @@ export const CountryClock: FC<CountryClockProps> = ({ timezone }) => {
     <Tooltip title={timezone} placement="top" arrow>
       <StyledBoxWrapper>
         <StyledClockIcon />
-        <StyledTypography>{currentTime}</StyledTypography>
+        <StyledTypography data-testid="country-local-time">
+          {currentTime}
+        </StyledTypography>
       </StyledBoxWrapper>
     </Tooltip>
   );

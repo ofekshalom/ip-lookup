@@ -33,6 +33,9 @@ export const IpSearchField: FC<IpSearchFieldProps> = ({ index }) => {
         <StyledTypographyIndex>{index}</StyledTypographyIndex>
       </StyledBoxItemIndexWrapper>
       <TextField
+        slotProps={{
+          input: { inputProps: { "data-testid": "ip-search-input" } },
+        }}
         placeholder={IP_PLACEHOLDER}
         value={ip}
         onChange={handleChange}

@@ -19,6 +19,7 @@ export const IpDetails: FC<IpDetailsProps> = ({
     <StyledBoxWrapper>
       <Tooltip title={`${countryName} / ${city}`} arrow placement="top">
         <StyledBoxImage
+          data-testid="country-image"
           sx={{ width: "40px" }}
           component="img"
           src={`https://flagsapi.com/${countryCode}/flat/64.png`}
