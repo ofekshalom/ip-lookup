@@ -1,6 +1,6 @@
 export const english = {
   ipLookup: {
-    header: "Ip Lookup",
+    header: "IP Lookup",
     subheader: "Enter one or more IP addresses and get their country",
     addIpButton: "Add IP",
     validations: {
