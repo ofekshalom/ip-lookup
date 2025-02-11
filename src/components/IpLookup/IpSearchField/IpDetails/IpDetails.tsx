@@ -1,4 +1,4 @@
-import { Box, Tooltip } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import { CountryClock } from "./CountryClock/CountryClock";
 import { FC } from "react";
 import { StyledBoxImage, StyledBoxWrapper } from "./IpDetails.styles";

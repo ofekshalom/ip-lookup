@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import { Box, Tooltip, Typography } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import { getCurrentTime } from "../../../../../utils/time";
 import {
   StyledBoxWrapper,

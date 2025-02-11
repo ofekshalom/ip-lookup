@@ -13,6 +13,6 @@ interface StyledBoxImageProps {
   component: string;
 }
 
-export const StyledBoxImage = styled(Box)<StyledBoxImageProps>(({ theme }) => ({
+export const StyledBoxImage = styled(Box)<StyledBoxImageProps>(() => ({
   width: "40px",
 }));

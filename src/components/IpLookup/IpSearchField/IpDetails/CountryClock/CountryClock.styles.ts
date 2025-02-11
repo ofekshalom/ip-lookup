@@ -12,7 +12,7 @@ export const StyledClockIcon = styled(AccessTimeIcon)(() => ({
   color: "#637381",
 }));
 
-export const StyledTypography = styled(Typography)(({ theme }) => ({
+export const StyledTypography = styled(Typography)(() => ({
   fontSize: "16px",
   fontWeight: 400,
   color: "#1C252E",
